@@ -1,13 +1,29 @@
 /*
  * Area.java
  * Adrian
- * 3/12/19
+ * 3/14/19
  * This program will calculate area
  */
 import java.util.Scanner;
 
 public class Area {
 	static Scanner keyboard = new Scanner(System.in);
+	
+	/*
+	 * getRectArea : int
+	 * params : width: int, length: int
+	 * calculates rectangle area
+	 */
+	
+	public static int getRectArea(int width, int length) {
+		
+		return width * length;
+	}
+	
+	
+	
+	
+	
 	/*
 	 * rectArea : void
 	 * inputs: width and length
@@ -29,6 +45,22 @@ public class Area {
 		System.out.println("The area is: " + area);
 		
 	}
+	
+	
+	
+	
+	
+	
+	/*
+	 * getCircArea : double
+	 * params : radius: double
+	 * calculates circle area
+	 */
+	
+public static double getCircArea(double radius) {
+		
+		return Math.pow(radius, 2.0) * Math.PI;
+	}
 	//This program is for calculating circle area
 	/*
 	 * circArea : void
@@ -47,6 +79,24 @@ public class Area {
 		//output
 		System.out.println("Your circle's area is: " + area);
 	}
+	
+	
+	
+	
+	
+	/*
+	 * getTriArea : double
+	 * params : height: double, base: double
+	 * calculates rectangle area
+	 */
+	
+	public static double getTriArea(double height, double base) {
+		
+		return (height * base) / 2.0;
+		
+	}
+	
+	
 	//This program is for calculating triangle area
 	/*
 	 * triArea : void
@@ -69,12 +119,32 @@ public class Area {
 		
 	}
 	
+	
+	
+	
+	
+	
 	//for debugging
 	public static void main(String[] args) {
 		rectArea(); //Function call/invocation
 		circArea();
 		triArea();
+		System.out.println("Enter width and length: ");
+		int width	= keyboard.nextInt();
+		int length 	= keyboard.nextInt();
+		int area 	= getRectArea( width, length);
 		
+		System.out.println("Enter radius: ");
+		double radius = keyboard.nextInt();
+		double circArea	= getCircArea(radius);
 		
+		System.out.println("Enter base and height: ");
+		double base = keyboard.nextInt();
+		double height = keyboard.nextInt();
+		double triArea = getTriArea(height, base);
+		
+		System.out.println("Area: " + area);
+		System.out.println("Circle Area: " + circArea);
+		System.out.println("Triangle Area: " + triArea);
 	}
 }
