@@ -1,8 +1,8 @@
-package Homework;
+
 import java.lang.Math;
 import java.util.Scanner;
 
-public class CalculatorProject {
+public class AdriansCalc {
 	public static void main (String [] args) {
     		Scanner input = new Scanner(System.in);
         
@@ -47,12 +47,12 @@ public class CalculatorProject {
         			continue; }
         }
         
-        while (calcMode.equalsIgnoreCase("Standard")) {
+        if (calcMode.equalsIgnoreCase("Standard")) {
         
         if (operation.equals("+")) {
         	System.out.println("How many numbers do you want to add?");
         	amountOfNumbers = input.nextInt();
-        	System.out.println("Enter " + amountOfNumbers + "numbers");
+        	System.out.println("Enter " + amountOfNumbers + " numbers");
         	for (int i = 0; i < amountOfNumbers; ++i) {
         		numValues = input.nextDouble();
         		valSum = valSum + numValues;
@@ -62,7 +62,7 @@ public class CalculatorProject {
         if (operation.equals("-")) {
         	System.out.println("How many numbers do you want to subtract?");
         	amountOfNumbers = input.nextInt();
-        	System.out.println("Enter " + amountOfNumbers + "numbers");
+        	System.out.println("Enter " + amountOfNumbers + " numbers");
         	if (amountOfNumbers == 2) {
    			 double numOne = input.nextDouble();
    		     double numTwo = input.nextDouble();
@@ -108,14 +108,17 @@ public class CalculatorProject {
    				finalResult = valQuotient; }
    			}
         }
+        System.out.println("Result: " + finalResult);
+        System.out.println("Do you want to start over? (Y/N)");
+        startOver = input.next();
     }
 
-        while (calcMode.equalsIgnoreCase("Scientific")) {
+        if (calcMode.equalsIgnoreCase("Scientific")) {
             
             if (operation.equals("+")) {
             	System.out.println("How many numbers do you want to add?");
             	amountOfNumbers = input.nextInt();
-            	System.out.println("Enter " + amountOfNumbers + "numbers");
+            	System.out.println("Enter " + amountOfNumbers + " numbers");
             	for (int i = 0; i < amountOfNumbers; ++i) {
             		numValues = input.nextDouble();
             		valSum = valSum + numValues;
@@ -125,7 +128,7 @@ public class CalculatorProject {
             if (operation.equals("-")) {
             	System.out.println("How many numbers do you want to subtract?");
             	amountOfNumbers = input.nextInt();
-            	System.out.println("Enter " + amountOfNumbers + "numbers");
+            	System.out.println("Enter " + amountOfNumbers + " numbers");
             	if (amountOfNumbers == 2) {
        			 double numOne = input.nextDouble();
        		     double numTwo = input.nextDouble();
@@ -145,7 +148,7 @@ public class CalculatorProject {
             if (operation.equals("*")) {
             	System.out.println("How many numbers do you want to add?");
             	amountOfNumbers = input.nextInt();
-            	System.out.println("Enter " + amountOfNumbers + "numbers");
+            	System.out.println("Enter " + amountOfNumbers + " numbers");
             	for (int i = 1; i <= amountOfNumbers; ++i) {
         			numValues = input.nextDouble();
         			valProduct = valProduct * numValues;
@@ -155,7 +158,7 @@ public class CalculatorProject {
             if (operation.equals("/")) {
             	System.out.println("How many numbers do you want to add?");
             	amountOfNumbers = input.nextInt();
-            	System.out.println("Enter " + amountOfNumbers + "numbers");
+            	System.out.println("Enter " + amountOfNumbers + " numbers");
             	if (amountOfNumbers == 2) {
        			 double numOne = input.nextDouble();
        		     double numTwo = input.nextDouble();
@@ -195,12 +198,14 @@ public class CalculatorProject {
        	         
        	        }
             }
+       
         }
+            System.out.println("Result: " + finalResult);
+            System.out.println("Do you want to start over? (Y/N)");
+            startOver = input.next(); 	
     }
         
-        System.out.println("Result: " + finalResult);
-        System.out.println("Do you want to start over? (Y/N)");
-        startOver = input.next();
+        
         if ((startOver.equalsIgnoreCase("N"))) {
         	System.out.println("Goodbye"); }
         
