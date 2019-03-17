@@ -1,0 +1,209 @@
+package Homework;
+import java.lang.Math;
+import java.util.Scanner;
+
+public class CalculatorProject {
+	public static void main (String [] args) {
+    		Scanner input = new Scanner(System.in);
+        
+       String startOver = "Y";
+       while ((startOver.equalsIgnoreCase("Y"))) {
+    	   
+        int amountOfNumbers;
+        double numValues;
+        double valSum = 0;
+        double valDifference = 0;
+        double valProduct = 1;
+        double valQuotient = 0;
+        double valSin, valCos, valTan;
+        double finalResult = 0;
+        
+        
+        String calcMode;
+        String operation = "+";
+        
+        	
+        System.out.println("Enter the calculator mode: Standard/Scientific?");
+        calcMode = input.next();
+        
+        if (calcMode.equalsIgnoreCase("Standard")) { 
+         System.out.println("The calculator will operate in " + calcMode + " mode.");
+        	System.out.println("Enter '+' for addition, '-' for subtractions, '*' for multiplication, '/' for division");
+        	operation = input.next();
+        		if (!operation.equals("+") && !operation.equals("-") && !operation.equals("*") && !operation.equals("/")) {
+        			System.out.println("Invalid operation entered");
+        			System.out.println("Enter '+' for addition, '-' for subtractions, '*' for multiplication, '/' for division:");
+        			operation = input.next();
+        			continue; }
+        }
+        
+        if (calcMode.equalsIgnoreCase("Scientific")) { 
+        	System.out.println("Enter '+' for addition, '-' for subtractions, '*' for multiplication, '/' for division, 'sin' for sin x, 'cos' for cos x, 'tan' for tan x:");
+        	operation = input.next();
+        		if (operation.equals("+") && operation.equals("-") && operation.equals("*") && operation.equals("/") && operation.equals("sin") && operation.equals("cos") && operation.equals("tan")) {
+        			System.out.println("Invalid operation entered");
+        			System.out.println("Enter '+' for addition, '-' for subtractions, '*' for multiplication, '/' for division, 'sin' for sin x, 'cos' for cos x, 'tan' for tan x:");
+        			operation = input.next();
+        			continue; }
+        }
+        
+        while (calcMode.equalsIgnoreCase("Standard")) {
+        
+        if (operation.equals("+")) {
+        	System.out.println("How many numbers do you want to add?");
+        	amountOfNumbers = input.nextInt();
+        	System.out.println("Enter " + amountOfNumbers + "numbers");
+        	for (int i = 0; i < amountOfNumbers; ++i) {
+        		numValues = input.nextDouble();
+        		valSum = valSum + numValues;
+        		finalResult = valSum; }
+        	}
+        
+        if (operation.equals("-")) {
+        	System.out.println("How many numbers do you want to subtract?");
+        	amountOfNumbers = input.nextInt();
+        	System.out.println("Enter " + amountOfNumbers + "numbers");
+        	if (amountOfNumbers == 2) {
+   			 double numOne = input.nextDouble();
+   		     double numTwo = input.nextDouble();
+   			valDifference = numOne - numTwo;
+   			finalResult = valDifference; } 
+   		else if (amountOfNumbers != 2) {
+   			 double numOne = input.nextDouble();
+   		     double numTwo = input.nextDouble();
+   			valDifference = numOne - numTwo;
+   			for (int i = 1; i <= (amountOfNumbers - 2); ++i) {
+   				numValues = input.nextDouble();
+   				valDifference = valDifference - numValues;
+   				finalResult = valDifference; }
+        	}
+        }
+        
+        if (operation.equals("*")) {
+        	System.out.println("How many numbers do you want to add?");
+        	amountOfNumbers = input.nextInt();
+        	System.out.println("Enter " + amountOfNumbers + "numbers");
+        	for (int i = 1; i <= amountOfNumbers; ++i) {
+    			numValues = input.nextDouble();
+    			valProduct = valProduct * numValues;
+    			finalResult = valProduct; }
+        	}
+        
+        if (operation.equals("/")) {
+        	System.out.println("How many numbers do you want to add?");
+        	amountOfNumbers = input.nextInt();
+        	System.out.println("Enter " + amountOfNumbers + "numbers");
+        	if (amountOfNumbers == 2) {
+   			 double numOne = input.nextDouble();
+   		     double numTwo = input.nextDouble();
+   			valQuotient = numOne / numTwo;
+   			finalResult = valQuotient; } 
+   		else if (amountOfNumbers != 2) {
+   			 double numOne = input.nextDouble();
+   		     double numTwo = input.nextDouble();
+   			valQuotient = numOne / numTwo;
+   			for (int i = 1; i <= (amountOfNumbers - 2); ++i) {
+   				numValues = input.nextDouble();
+   				valQuotient = valQuotient / numValues;
+   				finalResult = valQuotient; }
+   			}
+        }
+    }
+
+        while (calcMode.equalsIgnoreCase("Scientific")) {
+            
+            if (operation.equals("+")) {
+            	System.out.println("How many numbers do you want to add?");
+            	amountOfNumbers = input.nextInt();
+            	System.out.println("Enter " + amountOfNumbers + "numbers");
+            	for (int i = 0; i < amountOfNumbers; ++i) {
+            		numValues = input.nextDouble();
+            		valSum = valSum + numValues;
+            		finalResult = valSum; }
+            	}
+            
+            if (operation.equals("-")) {
+            	System.out.println("How many numbers do you want to subtract?");
+            	amountOfNumbers = input.nextInt();
+            	System.out.println("Enter " + amountOfNumbers + "numbers");
+            	if (amountOfNumbers == 2) {
+       			 double numOne = input.nextDouble();
+       		     double numTwo = input.nextDouble();
+       			valDifference = numOne - numTwo;
+       			finalResult = valDifference; } 
+       		else if (amountOfNumbers != 2) {
+       			 double numOne = input.nextDouble();
+       		     double numTwo = input.nextDouble();
+       			valDifference = numOne - numTwo;
+       			for (int i = 1; i <= (amountOfNumbers - 2); ++i) {
+       				numValues = input.nextDouble();
+       				valDifference = valDifference - numValues;
+       				finalResult = valDifference; }
+            	}
+            }
+            
+            if (operation.equals("*")) {
+            	System.out.println("How many numbers do you want to add?");
+            	amountOfNumbers = input.nextInt();
+            	System.out.println("Enter " + amountOfNumbers + "numbers");
+            	for (int i = 1; i <= amountOfNumbers; ++i) {
+        			numValues = input.nextDouble();
+        			valProduct = valProduct * numValues;
+        			finalResult = valProduct; }
+            	}
+            
+            if (operation.equals("/")) {
+            	System.out.println("How many numbers do you want to add?");
+            	amountOfNumbers = input.nextInt();
+            	System.out.println("Enter " + amountOfNumbers + "numbers");
+            	if (amountOfNumbers == 2) {
+       			 double numOne = input.nextDouble();
+       		     double numTwo = input.nextDouble();
+       			valQuotient = numOne / numTwo;
+       			finalResult = valQuotient; } 
+       		else if (amountOfNumbers != 2) {
+       			 double numOne = input.nextDouble();
+       		     double numTwo = input.nextDouble();
+       			valQuotient = numOne / numTwo;
+       			for (int i = 1; i <= (amountOfNumbers - 2); ++i) {
+       				numValues = input.nextDouble();
+       				valQuotient = valQuotient / numValues;
+       				finalResult = valQuotient; }
+       			
+       			if (operation.equals("sin") || operation.equals("cos") || operation.equals("tan")) {
+       	        	System.out.println("Enter a number in radians to find the " + operation);
+       	     
+       	        	if (operation.equals("sin")) {
+       	        		numValues = input.nextDouble();
+       	        		valSin = Math.sin(numValues);
+       	        		finalResult = valSin; }
+       	        	
+       	        	if (operation.equals("cos")) {
+       	        		numValues = input.nextDouble();
+       	        		valCos = Math.cos(numValues);
+       	        		finalResult = valCos; }
+       	        	
+       	        	if (operation.equals("tan")) {
+       	        		numValues = input.nextDouble();
+       	        		valTan = Math.tan(numValues);
+       	        		finalResult = valTan; }
+       	        	
+       	        	if (!operation.equals("sin") && !operation.equals("cos") && !operation.equals("tan")) {
+       	        		System.out.println("How many numbers do you want to " + operation + "?"); 
+       	        		amountOfNumbers = input.nextInt();
+       	        		System.out.println("Enter " + amountOfNumbers + " numbers"); }
+       	         
+       	        }
+            }
+        }
+    }
+        
+        System.out.println("Result: " + finalResult);
+        System.out.println("Do you want to start over? (Y/N)");
+        startOver = input.next();
+        if ((startOver.equalsIgnoreCase("N"))) {
+        	System.out.println("Goodbye"); }
+        
+        }
+	}
+}
